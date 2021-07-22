@@ -6,13 +6,34 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <!-- #15#16 -->
+  <div id="app">
+    <like-component message="blue"></like-component>
+    <like-component message="yellow"></like-component>
+    <like-component message="red"></like-component>
+    <like-component></like-component>
+  </div>
+
+  <!-- #14 -->
+  <!-- <div id="app">
+    <like-component></like-component>
+  </div> -->
+
+  <!-- 
+  <div id="app">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+  </div>
+  No17 $emitを使ってイベントを発火させよう
   <div id="app">
     <p>Total Likes: {{total}}</p>
     <like-component message="Like" @increment="incrementTotal"></like-component>
     <like-component message="Awesome" @increment="incrementTotal"></like-component>
     <like-component message="Grate" @increment="incrementTotal"></like-component>
     <like-component @increment="incrementTotal"></like-component>
-  </div>
+  </div> -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="js/main.js"></script>
 </body>

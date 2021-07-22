@@ -1,43 +1,84 @@
 (function(){
   'use strict';
-
+  // #15#16
   var likeComponent = Vue.extend({
-    // props: ['message'],
-    props:{
-      message:{ 
+    template:`<button @click="countUp">{{message}} {{ count }}</button>`,
+    props: {
+      message: {
         type: String,
         default: 'Like'
       }
     },
     data: function(){
-      return{
-        count:0
+      return {
+        count: 0
       }
     },
-    template: '<button @click="countUp">{{ message }} {{ count }}</button>',
-    methods: {
+    methods:{
       countUp: function(){
-        this.count++;
-        this.$emit('increment')
+        this.count++; 
       }
     }
   });
 
   var app = new Vue({
     el: '#app',
-    components: {
-      'like-component': likeComponent
-    },
-    data: {
-      total:0
-    },
-    methods:{
-      incrementTotal: function(){
-        this.total++;
-      }
-    }
+    components :{
+      'like-component' : likeComponent
+    } 
   });
 })();
+
+
+  //No17
+  // Vue.component('button-counter', {
+  //   data: function () {
+  //     return {
+  //       count: 0
+  //     }
+  //   },
+  //   template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  // })
+  // No17 $emitを使ってイベントを発火させよう
+  // var likeComponent = Vue.extend({
+  //   // props: ['message'],
+  //   props:{
+  //     message:{ 
+  //       type: String,
+  //       default: 'Like'
+  //     }
+  //   },
+  //   data: function(){
+  //     return{
+  //       count:0
+  //     }
+  //   },
+  //   template: '<button @click="countUp">{{ message }} {{ count }}</button>',
+  //   methods: {
+  //     countUp: function(){
+  //       this.count++;
+  //       this.$emit('increment')
+  //     }
+  //   }
+  // });
+
+ 
+  // No17 $emitを使ってイベントを発火させよう
+  // var app = new Vue({
+  //   el: '#app',
+  //   components: {
+  //     'like-component': likeComponent
+  //   },
+  //   data: {
+  //     total:0
+  //   },
+  //   methods:{
+  //     incrementTotal: function(){
+  //       this.total++;
+  //     }
+  //   }
+  // });
+
 // (function(){
 //   'use strict';
 //   var vm = new Vue({
