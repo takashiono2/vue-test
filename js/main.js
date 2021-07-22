@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  // #15#16
+  // #17
   var likeComponent = Vue.extend({
     template:`<button @click="countUp">{{message}} {{ count }}</button>`,
     props: {
@@ -16,17 +16,55 @@
     },
     methods:{
       countUp: function(){
-        this.count++; 
+        this.count++;
+        this.$emit('increment');
       }
     }
   });
 
+  // #17
   var app = new Vue({
     el: '#app',
+    data:{
+      total: 0
+    },
+    methods: {
+      incrementTatal: function(){
+      this.total ++; 
+      }
+    },
     components :{
       'like-component' : likeComponent
     } 
   });
+  // #15#16
+  // var likeComponent = Vue.extend({
+  //   template:`<button @click="countUp">{{message}} {{ count }}</button>`,
+  //   props: {
+  //     message: {
+  //       type: String,
+  //       default: 'Like'
+  //     }
+  //   },
+  //   data: function(){
+  //     return {
+  //       count: 0
+  //     }
+  //   },
+  //   methods:{
+  //     countUp: function(){
+  //       this.count++; 
+  //     }
+  //   }
+  // });
+
+  // #15#16
+  // var app = new Vue({
+  //   el: '#app',
+  //   components :{
+  //     'like-component' : likeComponent
+  //   } 
+  // });
 })();
 
 

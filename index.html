@@ -9,10 +9,11 @@
 
   <!-- #15#16 -->
   <div id="app">
-    <like-component message="blue"></like-component>
-    <like-component message="yellow"></like-component>
-    <like-component message="red"></like-component>
-    <like-component></like-component>
+    <p>Total Likes {{total}}</p>
+    <like-component message="blue" @increment="incrementTatal"></like-component>
+    <like-component message="yellow" @increment="incrementTatal"></like-component>
+    <like-component message="red" @increment="incrementTatal"></like-component>
+    <like-component @increment="incrementTatal"></like-component>
   </div>
 
   <!-- #14 -->
