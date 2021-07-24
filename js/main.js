@@ -3,8 +3,14 @@
   // #14
   var likeComponent = Vue.extend({
     template:`
-    <button @click="countUp">like {{count}}</button>
+    <button @click="countUp">{{message}} {{count}}</button>
     `,
+    props: {
+      message: {
+        type: String,
+        default: 'like'
+      }
+    },
     data: function(){
       return {
         count: 0
