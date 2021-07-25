@@ -1,16 +1,9 @@
 (function(){
   'use strict';
-  // #17
   var likeComponent = Vue.extend({
     template:`
-    <button @click="countUp">{{message}} {{count}}</button>
+    <button @click="countUp">like{{count}}</button>
     `,
-    props: {
-      message: {
-        type: String,
-        default: 'like'
-      }
-    },
     data: function(){
       return {
         count: 0
@@ -19,23 +12,14 @@
     methods: {
       countUp: function(){
         this.count++;
-        this.$emit('increment');
       }
-    }
+    } 
   });
 
   var app = new Vue({
     el: '#app',
-    components :{
+    components: {
       'like-component': likeComponent
-    },
-    data: {
-      total: 0
-    },
-    methods:{
-      incrementTotal: function(){
-        this.total++;
-      }
     }
   });
 })();
